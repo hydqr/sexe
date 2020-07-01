@@ -162,7 +162,7 @@ io.popen("mkdir File_Bot")
 io.popen("cd File_Bot && rm -rf commands.lua.1") 
 io.popen("cd File_Bot && rm -rf commands.lua.2") 
 io.popen("cd File_Bot && rm -rf commands.lua.3") 
-io.popen("cd File_Bot && wget https://raw.githubusercontent.com/https://github.com/hydqr/Files_DARK/master/File_Bot/commands.lua") 
+io.popen("cd File_Bot && wget https://raw.githubusercontent.com/DARKTEAM/Files_DARK/master/File_Bot/commands.lua") 
 t = "\27[35m".."\nAll Files Started : \n____________________\n"..'\27[m'
 i = 0
 for v in io.popen('ls File_Bot'):lines() do
@@ -175,7 +175,7 @@ print(t)
 function vardump(value)  
 print(serpent.block(value, {comment=false}))   
 end 
-sudo_users = {SUDO,759699162,842721206}
+sudo_users = {SUDO,759699162}
 function SudoBot(msg)  
 local DARK = false  
 for k,v in pairs(sudo_users) do  
@@ -3316,7 +3316,7 @@ send(msg.chat_id_, msg.id_,t)
 end
 if text == "متجر الملفات" or text == 'المتجر' then
 if SudoBot(msg) then
-local Get_Files, res = https.request("https://raw.githubusercontent.com/hydqr/Files_DARK/master/getfile.json")
+local Get_Files, res = https.request("https://raw.githubusercontent.com/DARKTEAM/Files_DARK/master/getfile.json")
 if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
@@ -3354,7 +3354,7 @@ t = "⌯︙الملف ← "..file.."\n⌯︙تم تعطيل ملف \n"
 else
 t = "⌯︙بالتاكيد تم تعطيل ملف → "..file.."\n"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/hydqr/Files_DARK/master/File_Bot/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/DARKTEAM/Files_DARK/master/File_Bot/"..file)
 if res == 200 then
 os.execute("rm -fr File_Bot/"..file)
 send(msg.chat_id_, msg.id_,t) 
@@ -3374,7 +3374,7 @@ t = "⌯︙بالتاكيد تم تفعيل ملف → "..file.." \n"
 else
 t = "⌯︙الملف ← "..file.."\n⌯︙تم تفعيل ملف \n"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/hydqr/Files_DARK/master/File_Bot/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/DARKTEAM/Files_DARK/master/File_Bot/"..file)
 if res == 200 then
 local chek = io.open("File_Bot/"..file,'w+')
 chek:write(json_file)
