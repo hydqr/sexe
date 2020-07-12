@@ -20,40 +20,40 @@ file:write(serialized)
 file:close()  
 end  
 if not redis:get(id_server..":token") then
-io.write('\27[0;31m\n ارسل توكن البوت  ↓ :\na┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n\27')
+io.write('\27[0;32m\n ارسل توكن البوت  ↓ :\na┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n\27')
 local token = io.read()
 if token ~= '' then
 local url , res = https.request('https://api.telegram.org/bot'..token..'/getMe')
 if res ~= 200 then
 print('\27[0;31m┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n عذرا التوكن غير صحيح ')
 else
-io.write('\27[0;31m تم حفظ التوكن بنجاح\na┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n27[0;39;49m')
+io.write('\27[0;32m تم حفظ التوكن بنجاح\na┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n27[0;39;49m')
 redis:set(id_server..":token",token)
 end 
 else
-print('\27[0;35m┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n لم يتم حفظ التوكن ارسل لي التوكن الان')
+print('\27[1;33m┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n لم يتم حفظ التوكن ارسل لي التوكن الان')
 end 
 os.execute('lua DARK.lua')
 end
 if not redis:get(id_server..":SUDO:ID") then
-io.write('\27[0;35m\n ارسل لي ايدي المطور الاساسي ↓ :\na┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n\27[0;33;49m')
+io.write('\27[0;31m\n ارسل لي ايدي المطور الاساسي ↓ :\na┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n\27[0;33;49m')
 local SUDOID = io.read()
 if SUDOID ~= '' then
-io.write('\27[1;35m تم حفظ ايدي المطور الاساسي \na┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n27[0;39;49m')
+io.write('\27[1;36m تم حفظ ايدي المطور الاساسي \na┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n27[0;39;49m')
 redis:set(id_server..":SUDO:ID",SUDOID)
 else
-print('\27[0;31m┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n لم يتم حفظ ايدي المطور الاساسي ارسله مره اخره')
+print('\27[1;36m┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n لم يتم حفظ ايدي المطور الاساسي ارسله مره اخره')
 end 
 os.execute('lua DARK.lua')
 end
 if not redis:get(id_server..":SUDO:USERNAME") then
-io.write('\27[1;31m ↓ ارسل معرف المطور الاساسي :\n SEND ID FOR SIDO : \27[0;39;49m')
+io.write('\27[0;35m ↓ ارسل معرف المطور الاساسي :\n SEND ID FOR SIDO : \27[0;39;49m')
 local SUDOUSERNAME = io.read():gsub('@','')
 if SUDOUSERNAME ~= '' then
-io.write('\n\27[1;34m تم حفظ معرف المطور :\n\27[0;39;49m')
+io.write('\n\27[1;31m تم حفظ معرف المطور :\n\27[0;39;49m')
 redis:set(id_server..":SUDO:USERNAME",'@'..SUDOUSERNAME)
 else
-print('\n\27[1;34m لم يتم حفظ معرف المطور :')
+print('\n\27[0;35m لم يتم حفظ معرف المطور :')
 end 
 os.execute('lua DARK.lua')
 end
